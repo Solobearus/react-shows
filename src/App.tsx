@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import styled from 'styled-components';
 import { Home } from './routes/Home';
+import { Show } from './routes/Show';
 
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
@@ -49,8 +50,13 @@ class App extends React.Component<Props, State> {
     return (
       <Router>
         <Switch>
-          <Route path="/home">
-            <Home query={this.state.query} setQuery={this.setQuery} showsData={this.state.showsData} ></Home>
+          <Route path="/home" render={({ history }) =>
+            <Home query={this.state.query} setQuery={this.setQuery} showsData={this.state.showsData} history={history}></Home>
+          }>
+          </Route>
+          <Route path="/shows/:id" render={({ match }) =>
+            <Show showsData={this.state.showsData} match={match}></Show>
+          }>
           </Route>
           <Redirect to="/home"></Redirect>
         </Switch>

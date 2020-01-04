@@ -7,13 +7,14 @@ interface Props {
     query: string;
     setQuery: any;
     showsData: any;
+    history: any;
 }
 
-export const Home: React.FC<Props> = ({ query, setQuery, showsData }) => {
+export const Home: React.FC<Props> = ({ query, setQuery, showsData, history }) => {
     return (
         <div>
             <Header query={query} setQuery={setQuery}></Header>
-            <List shows={showsData}></List>
+            <List shows={showsData} history={history}></List>
         </div>
     );
 }

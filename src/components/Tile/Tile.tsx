@@ -3,12 +3,14 @@ import './Tile.css'
 
 
 export interface IProps {
-    show: any
+    show: any,
+    history: any
 }
 
-export const Tile: React.FC<IProps> = ({ show }) => {
+export const Tile: React.FC<IProps> = ({ show, history }) => {
     return (
-        < div className="tile">
+        < div className="tile" onClick={() => { history.push(`/shows/${show.id}`);console.log('test');
+         }}>
             <div>
                 {show.id}
             </div>
