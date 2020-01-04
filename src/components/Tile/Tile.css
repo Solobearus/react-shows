@@ -1,0 +1,17 @@
+.tile{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width:250px;
+    height:420px;
+    margin: 20px;
+    box-shadow: 8px 8px 18px black;
+}
+
+img{
+    width: 210px;
+    height: 300px;
+    margin: 10px;
+}

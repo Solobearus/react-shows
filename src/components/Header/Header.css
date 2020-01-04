@@ -1,0 +1,14 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header input{
+    margin: 20px;
+    width: 400px;
+    padding: 10px;
+}
