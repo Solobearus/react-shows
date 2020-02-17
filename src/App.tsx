@@ -28,7 +28,7 @@ class App extends React.Component<Props, State> {
 
   setQuery = (query: string) => {
     this.setState({ query: query });
-    fetch("http://api.tvmaze.com/search/shows?q=" + query)
+    fetch("https://api.tvmaze.com/search/shows?q=" + query)
       .then(res => res.json())
       .then(res => this.setState(
         {

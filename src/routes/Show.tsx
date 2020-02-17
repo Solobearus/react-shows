@@ -16,7 +16,7 @@ export class Show extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        fetch("http://api.tvmaze.com/shows/" + this.props.match.params.id)
+        fetch("https://api.tvmaze.com/shows/" + this.props.match.params.id)
             .then(res => res.json())
             .then(res => this.setState({ showData: res }))
     }
