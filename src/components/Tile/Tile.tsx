@@ -3,14 +3,20 @@ import './Tile.css'
 
 
 export interface IProps {
-    show: any,
+    show: {
+        id: string,
+        name: string,
+        score: number,
+        image?: {
+            medium?: string
+        },
+    },
     history: any
 }
 
 export const Tile: React.FC<IProps> = ({ show, history }) => {
     return (
-        < div className="tile" onClick={() => { history.push(`/shows/${show.id}`);console.log('test');
-         }}>
+        < div role="button" className="tile" onClick={() => history.push(`/shows/${show.id}`)}>
             <div>
                 {show.id}
             </div>

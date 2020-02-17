@@ -18,7 +18,7 @@ export interface showData {
   name: string,
 
 }
-
+  
 class App extends React.Component<Props, State> {
 
   state: State = {
@@ -28,7 +28,6 @@ class App extends React.Component<Props, State> {
 
   setQuery = (query: string) => {
     this.setState({ query: query });
-
     fetch("http://api.tvmaze.com/search/shows?q=" + query)
       .then(res => res.json())
       .then(res => this.setState(
@@ -41,7 +40,8 @@ class App extends React.Component<Props, State> {
               image: show.show.image,
             }
           })
-        }))
+        }
+      ))
   }
 
 
@@ -50,11 +50,11 @@ class App extends React.Component<Props, State> {
     return (
       <Router>
         <Switch>
-          <Route path="/home" render={({ history }) =>
+          <Route path="/home" render={({ history }: any) =>
             <Home query={this.state.query} setQuery={this.setQuery} showsData={this.state.showsData} history={history}></Home>
           }>
           </Route>
-          <Route path="/shows/:id" render={({ match }) =>
+          <Route path="/shows/:id" render={({ match }: any) =>
             <Show showsData={this.state.showsData} match={match}></Show>
           }>
           </Route>

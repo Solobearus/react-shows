@@ -12,6 +12,7 @@ export const Header: React.FC<Iprops> = ({ query, setQuery }) => {
     return (
         < div className="header">
             <input
+                role="input"
                 type="search"
                 placeholder="search"
                 value={query}
